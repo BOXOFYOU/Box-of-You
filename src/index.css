@@ -1,0 +1,104 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+
+@theme {
+  --font-sans: "Lexend Deca", sans-serif;
+  --font-display: "Lexend Deca", sans-serif;
+  --font-mono: "Space Mono", monospace;
+  
+  --color-pink-50: #FFF0F5;
+  --color-pink-100: #FFD6E7;
+  --color-pink-200: #FFB3CC;
+  --color-pink-300: #FF85AA;
+  --color-pink-400: #FF5C8A;
+  --color-rose: #E8637A;
+  --color-blush: #F2A0B0;
+  --color-cream: #FFF8F5;
+  --color-ink: #1A1215;
+  --color-ink-soft: #4A3540;
+  --color-muted: #9A8A8F;
+}
+
+@layer base {
+  body {
+    @apply font-sans text-ink bg-cream min-h-screen antialiased;
+    background: linear-gradient(135deg, #FFF0F5 0%, #FFE4ED 30%, #FFF8F0 60%, #FFF0F5 100%);
+    background-attachment: fixed;
+    letter-spacing: -0.01em;
+  }
+  
+  h1, h2, h3, h4 {
+    @apply font-display tracking-tight font-semibold;
+  }
+
+  p {
+    @apply leading-relaxed;
+  }
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px rgba(232, 99, 122, 0.03);
+}
+
+.glass-dark {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(0, 0, 0, 0.3) 100%);
+  backdrop-filter: blur(40px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.text-glow {
+  text-shadow: 0 0 30px rgba(232, 99, 122, 0.3);
+}
+
+.text-glow-white {
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+.bg-mesh {
+  background-color: #ffffff;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(232, 99, 122, 0.05) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(255, 133, 170, 0.05) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(232, 99, 122, 0.05) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(255, 133, 170, 0.05) 0px, transparent 50%);
+}
+
+.mask-fade-bottom {
+  mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+}
+
+.mask-fade-top {
+  mask-image: linear-gradient(to top, black 80%, transparent 100%);
+}
+
+.glass-nav {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(24px);
+}
+
+.glow {
+  box-shadow: 0 0 40px rgba(255, 133, 170, 0.2);
+}
+
+.soft-shadow {
+  box-shadow: 0 4px 24px rgba(232, 99, 122, 0.12);
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
