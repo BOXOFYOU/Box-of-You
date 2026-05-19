@@ -1,7 +1,36 @@
 import React from 'react';
 import { motion } from 'motion/react';
+import { useLocation } from 'react-router-dom';
 
 export const BlobBackground: React.FC = () => {
+  const location = useLocation();
+  const whiteBgPaths = ['/shop', '/build', '/corporate', '/about', '/faq', '/product'];
+  const isWhiteBgPage = whiteBgPaths.some(path => location.pathname.startsWith(path));
+
+  if (isWhiteBgPage) {
+    return (
+      <div className="fixed inset-0 overflow-hidden pointer-events-none -z-10 bg-[#fdfdfd]">
+        {/* Soft elegant white/pastel background for secondary pages */}
+        <div className="absolute top-0 left-0 w-full h-full bg-white/30 backdrop-blur-[60px] z-10" />
+        <motion.div
+           animate={{ y: [0, -20, 0], opacity: [0.6, 0.8, 0.6] }}
+           transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+           className="absolute -top-[20%] -left-[10%] w-[70%] h-[70%] rounded-full bg-radial from-[#FFF3E0]/70 to-transparent blur-[120px]"
+        />
+        <motion.div
+           animate={{ y: [0, 30, 0], opacity: [0.5, 0.7, 0.5] }}
+           transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+           className="absolute top-[10%] left-[15%] w-[80%] h-[80%] rounded-full bg-radial from-[#FCE4EC]/70 to-transparent blur-[120px]"
+        />
+        <motion.div
+           animate={{ y: [0, -15, 0], opacity: [0.6, 0.8, 0.6] }}
+           transition={{ duration: 18, repeat: Infinity, ease: "easeInOut", delay: 4 }}
+           className="absolute -bottom-[20%] -right-[10%] w-[70%] h-[70%] rounded-full bg-radial from-[#E8EAF6]/80 to-transparent blur-[120px]"
+        />
+      </div>
+    );
+  }
+
   return (
     <div className="fixed inset-0 overflow-hidden pointer-events-none -z-10">
       {/* Global Background Image */}

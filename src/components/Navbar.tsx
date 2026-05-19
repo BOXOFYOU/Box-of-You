@@ -28,7 +28,7 @@ export const Navbar: React.FC = () => {
         <img 
           src="/logo.png" 
           alt="Box of You" 
-          className="h-10 md:h-12 w-auto group-hover:scale-105 transition-transform duration-500 object-contain"
+          className="pl-2 -ml-[7px] mr-[21px] -mt-[42px] -mb-[37px] w-[77px] h-[69px] group-hover:scale-105 transition-transform duration-500 object-contain"
           referrerPolicy="no-referrer"
         />
       </Link>
